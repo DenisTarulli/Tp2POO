@@ -8,4 +8,8 @@ public class SpeedPowerUp : PowerUps
     {
         throw new System.NotImplementedException();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+    }
 }

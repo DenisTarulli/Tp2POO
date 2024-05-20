@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Trunk : Enemy
 {
+    private void Update()
+    {
+        Movement();
+    }
+
     protected override void Attack()
     {
         throw new System.NotImplementedException();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
     }
 }

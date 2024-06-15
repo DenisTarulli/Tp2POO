@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, ITakeDamage
 {
-    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected EnemyScriptableObject enemy;
 
     protected virtual void Movement()
     {
 
     }
 
-    protected abstract void Attack();    
+    protected abstract void Attack();
 
-    protected void TakeDamage()
+
+    public void TakeDamage(float damageToTake)
     {
-
+        
     }
 }

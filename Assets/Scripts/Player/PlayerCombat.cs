@@ -21,9 +21,14 @@ public class PlayerCombat : MonoBehaviour, ITakeDamage
         currentHealth = maxHealth;
     }
 
+    private void Start()
+    {
+        canTakeDamage = true;
+    }
+
     private void Update()
     {
-        
+
     }
 
     public void TakeDamage(float damageToTake)

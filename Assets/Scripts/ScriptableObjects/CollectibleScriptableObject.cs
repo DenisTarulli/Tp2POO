@@ -6,4 +6,5 @@ using UnityEngine;
 public class CollectibleScriptableObject : ScriptableObject
 {
     public int scoreValue;
+    public GameObject collectAnimation;
 }

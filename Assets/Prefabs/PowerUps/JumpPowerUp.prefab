@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 209732576479185974}
+  - component: {fileID: 5049521800615071804}
   - component: {fileID: 2183516787560482514}
   m_Layer: 0
   m_Name: JumpPowerUp
@@ -33,6 +34,41 @@ Transform:
   - {fileID: 2198083287550345102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &5049521800615071804
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418533118328084720}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &2183516787560482514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9ac286568cc6647bfe6421a0090701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectEffect: {fileID: 3589312750243090165, guid: b69aa4cc8e2a44741852a8c9fc74f647, type: 3}
+  duration: 4
+  jumpMultiplier: 1.3
 --- !u!1 &6481619131987582582
 GameObject:
   m_ObjectHideFlags: 0

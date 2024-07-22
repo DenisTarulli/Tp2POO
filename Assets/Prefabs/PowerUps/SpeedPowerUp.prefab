@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2437864855658788025}
+  - component: {fileID: 6194543214423324216}
   - component: {fileID: 664035505181930018}
   m_Layer: 0
   m_Name: SpeedPowerUp
@@ -33,6 +34,41 @@ Transform:
   - {fileID: 5602383439455722809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &6194543214423324216
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899689376352568438}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &664035505181930018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade017979deba7445bdf4868b768ad47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectEffect: {fileID: 3589312750243090165, guid: b69aa4cc8e2a44741852a8c9fc74f647, type: 3}
+  duration: 4
+  speedMultiplier: 1.4
 --- !u!1 &2092060342002553967
 GameObject:
   m_ObjectHideFlags: 0

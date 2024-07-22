@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Collectables : MonoBehaviour, ICollectItem
@@ -12,10 +10,16 @@ public class Collectables : MonoBehaviour, ICollectItem
     public void Collect()
     {
         OnItemCollected?.Invoke(collectible.scoreValue);
+        GameObject collectedVfx = Instantiate(collectible.collectAnimation, transform.position, Quaternion.identity);
+
+        Destroy(collectedVfx, 1.5f);
+        Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (!collision.gameObject.CompareTag("Player")) return;
+
+        Collect();
     }
 }

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Chicken : Enemy
@@ -8,14 +7,26 @@ public class Chicken : Enemy
     private float distanceToTarget;
     private bool isAttacking;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     private void Update()
     {
         if (currentTarget != null)
+        {
             GetDistanceToTarget();
+            FlipSprite(GetDirection(currentTarget));
+        }
+
     }
     protected override void Attack()
     {
         isAttacking = true;
+        animator.SetBool("isAttacking", true);
         SetTarget();
         StartCoroutine(Charge());
     }
@@ -57,5 +68,6 @@ public class Chicken : Enemy
         }
 
         isAttacking = false;
+        animator.SetBool("isAttacking", false);
     }
 }

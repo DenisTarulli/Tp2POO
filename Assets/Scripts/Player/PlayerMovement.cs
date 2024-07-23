@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
+    private bool isGrounded;
     private Rigidbody2D rb;
 
     [Header("Drag")]
@@ -24,8 +25,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animations")]
     private Animator animator;
 
+    [Header("GroundCheck")]
+    [SerializeField] private float extraRayHeight;
+    [SerializeField] private LayerMask groundLayer;
+    private BoxCollider2D boxCollider;
+
     private void Start()
     {
+        boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -33,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         Inputs();
+        IsGrounded();
         Movement();
         Animations();
     }
@@ -48,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         inputVector = new Vector2(xInput, 0f);
 
-        if (Input.GetKeyDown(KeyCode.W) && PlayerGroundCheck.IsGrounded)
+        if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
             Jump();
     }
 
@@ -62,14 +70,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (PlayerGroundCheck.IsGrounded)
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void GravityCompensation()
     {
         if (!PlayerGroundCheck.IsGrounded)
             rb.AddForce(Vector2.down * gravityMultiplier, ForceMode2D.Force);
+    }
+
+    private bool IsGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, extraRayHeight, groundLayer);
+        
+        return raycastHit.collider != null;
     }
 
     private void Animations()

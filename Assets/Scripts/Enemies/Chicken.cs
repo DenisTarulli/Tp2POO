@@ -59,7 +59,7 @@ public class Chicken : Enemy
         Vector2 dir = GetDirection(currentTarget);
 
         yield return new WaitForEndOfFrame();
-
+        
         while (distanceToTarget > distanceToPoint)
         {
             transform.Translate(enemy.moveSpeed * Time.deltaTime * dir.normalized);

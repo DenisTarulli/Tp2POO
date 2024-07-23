@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: bf006ee74bd5fbb49b9c734d3a1ed0e5, type: 2}
-  distanceToPoint: 0.02
+  distanceToPoint: 0.06
   points:
   - {fileID: 0}
   - {fileID: 0}

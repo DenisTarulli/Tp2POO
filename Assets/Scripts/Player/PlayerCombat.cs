@@ -6,6 +6,9 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private float maxHealth;
+    [SerializeField] private float damageTakenPerHit;
+    [SerializeField] private float invulnerabilityDuration;
+    [SerializeField] private GameObject invulnerabilityBubble;
     private float currentHealth;
     private bool canTakeDamage;
 
@@ -33,11 +36,27 @@ public class PlayerCombat : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(float damageToTake)
     {
-        OnHurt?.Invoke(damageToTake);
+        currentHealth -= damageToTake;
+
+        OnHurt?.Invoke(currentHealth);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (!canTakeDamage || !collision.gameObject.CompareTag("Enemy")) return;
+
+        TakeDamage(damageTakenPerHit);
+        StartCoroutine(InvulerabilityTime());
+    }
+
+    private IEnumerator InvulerabilityTime()
+    {
+        canTakeDamage = false;
+        invulnerabilityBubble.SetActive(true);
+
+        yield return new WaitForSeconds(invulnerabilityDuration);
+
+        invulnerabilityBubble.SetActive(false);
+        canTakeDamage = true;
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Collectables : MonoBehaviour, ICollectItem
+public class Collectibles : MonoBehaviour, ICollectItem
 {
     [SerializeField] private CollectibleScriptableObject collectible;
 

@@ -10,6 +10,7 @@ public class FatBirdTriggerZone : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        enemy.TriggerAttack();
+        if (enemy != null)
+            enemy.TriggerAttack();
     }
 }

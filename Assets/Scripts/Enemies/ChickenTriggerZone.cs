@@ -10,6 +10,7 @@ public class ChickenTriggerZone : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        enemy.TriggerAttack(collision.transform);
+        if (enemy != null)
+            enemy.TriggerAttack(collision.transform);
     }
 }

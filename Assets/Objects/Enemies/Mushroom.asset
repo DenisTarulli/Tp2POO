@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb5f9010ed9c8a48a5c2e5c42ff2f6f, type: 3}
   m_Name: Mushroom
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  attackDamage: 0
-  maxHealth: 0
+  moveSpeed: 0.55
+  attackDamage: 8
+  maxHealth: 20

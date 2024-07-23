@@ -14,10 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Drag")]
     [SerializeField] private float gravityMultiplier;
 
-    [Header("Ground check")]
-    [SerializeField] private LayerMask groundMask;
-    [SerializeField] private float angle;
-
     [Header("Rotation")]
     [SerializeField] private Transform visualTransform;
 

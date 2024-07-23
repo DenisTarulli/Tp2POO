@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: b8dd72924eacdd74798ec5e4bceed101, type: 2}
+  distanceToPoint: 0.1
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8718419841773602337
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 8718419841773602337}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.019, y: -0.053, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -116,8 +120,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -522038653
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -636318601, guid: 053efdf994f307a4ca696520ae4e3600, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

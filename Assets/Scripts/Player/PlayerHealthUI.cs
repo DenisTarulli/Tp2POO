@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerHealthUI : MonoBehaviour
 {
-    [SerializeField] private Slider playerHealthBar;
+    private Slider playerHealthBar;
     private PlayerCombat player;
 
     private void Start()
     {
         player = FindObjectOfType<PlayerCombat>();
+        playerHealthBar = GetComponent<Slider>();
         SetMaxHealth();
     }
 

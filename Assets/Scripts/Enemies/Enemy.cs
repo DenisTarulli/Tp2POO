@@ -5,12 +5,12 @@ public abstract class Enemy : MonoBehaviour, ITakeDamage
     [SerializeField] protected EnemyScriptableObject enemy;
     [SerializeField] protected float distanceToPoint;
     [SerializeField] protected Transform[] points;
-    protected Transform targetPoint;
+    protected Transform currentTarget;
     protected float currentHealth;
 
     protected virtual void Movement()
     {
-        Vector2 dir = GetDirection(targetPoint);
+        Vector2 dir = GetDirection(currentTarget);
 
         transform.Translate(enemy.moveSpeed * Time.deltaTime * dir.normalized);
     }
@@ -23,20 +23,20 @@ public abstract class Enemy : MonoBehaviour, ITakeDamage
         currentHealth -= damageToTake;
     }
 
-    protected void SetTarget()
+    protected virtual void SetTarget()
     {
-        if (targetPoint == null)
-            targetPoint = points[0];
+        if (currentTarget == null)
+            currentTarget = points[0];
 
-        float distance = Vector2.Distance(transform.position, targetPoint.position);
+        float distance = Vector2.Distance(transform.position, currentTarget.position);
 
         if (distance > distanceToPoint) return;
 
         for (int i = 0; i < points.Length; i++)
         {
-            if (targetPoint != points[i])
+            if (currentTarget != points[i])
             {
-                targetPoint = points[i];
+                currentTarget = points[i];
                 return;
             }
         }

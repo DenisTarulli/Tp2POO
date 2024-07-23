@@ -3,14 +3,14 @@ public class Mushroom : Enemy
 {
     private void Start()
     {
-        targetPoint = points[0];
+        currentTarget = points[0];
     }
 
     private void Update()
     {
         Movement();
         SetTarget();
-        FlipSprite(GetDirection(targetPoint));
+        FlipSprite(GetDirection(currentTarget));
     }
 
     protected override void Attack()

@@ -17,6 +17,8 @@ public class PlayerCombat : MonoBehaviour, ITakeDamage
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public bool CanTakeDamage { get => canTakeDamage; set => canTakeDamage = value; } // Para pwpup invulnerabilidad
 
+    public GameObject InvulnerabilityBubble { get => invulnerabilityBubble; }
+
     public static event Action<float> OnHurt;
 
     private void Awake()

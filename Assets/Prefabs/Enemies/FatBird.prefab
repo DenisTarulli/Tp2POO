@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4705929062041322841}
   m_Layer: 0
   m_Name: FatBird
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +203,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   fallingSpeed: 0.7
-  fallingSpeedIncreaseMultiplier: 7
-  returnSpeed: 0.5
+  fallingSpeedIncreaseMultiplier: 6
+  returnSpeed: 0.35
   timeOnGround: 0.2

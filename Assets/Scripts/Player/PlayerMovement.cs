@@ -39,6 +39,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.gameIsOver)
+        {
+            this.enabled = false;
+            return;
+        }
+
         Inputs();
         IsGrounded();
         Movement();

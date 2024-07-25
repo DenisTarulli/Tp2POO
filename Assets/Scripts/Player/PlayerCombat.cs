@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour, ITakeDamage
@@ -33,11 +32,6 @@ public class PlayerCombat : MonoBehaviour, ITakeDamage
         canTakeDamage = true;
     }
 
-    private void Update()
-    {
-
-    }
-
     public void TakeDamage(float damageToTake)
     {
         currentHealth -= damageToTake;
@@ -55,20 +49,29 @@ public class PlayerCombat : MonoBehaviour, ITakeDamage
         if (!canTakeDamage || !collision.gameObject.CompareTag("Enemy")) return;
 
         TakeDamage(damageTakenPerHit);
-        StartCoroutine(InvulerabilityTime());
+        StartCoroutine(InvulerabilityTime(invulnerabilityDuration, true));
     }
 
-    private IEnumerator InvulerabilityTime()
+    private IEnumerator InvulerabilityTime(float duration, bool bubble)
     {
         canTakeDamage = false;
-        invulnerabilityBubble.SetActive(true);
 
-        yield return new WaitForSeconds(invulnerabilityDuration);
+        if (bubble)
+            invulnerabilityBubble.SetActive(true);
+
+        yield return new WaitForSeconds(duration);
 
         if (!invPowerUp)
         {
-            invulnerabilityBubble.SetActive(false);
+            if (bubble)
+                invulnerabilityBubble.SetActive(false);
+
             canTakeDamage = true;
         }
+    }
+
+    public void TriggerInvulnerability(float duration, bool bubble)
+    {
+        StartCoroutine(InvulerabilityTime(duration, bubble));
     }
 }

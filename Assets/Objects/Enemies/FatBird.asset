@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: FatBird
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  attackDamage: 0
-  maxHealth: 0
+  scoreOnKill: 300

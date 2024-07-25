@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GravityCompensation()
     {
-        if (!PlayerGroundCheck.IsGrounded)
+        if (isGrounded)
             rb.AddForce(Vector2.down * gravityMultiplier, ForceMode2D.Force);
     }
 

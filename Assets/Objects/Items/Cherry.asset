@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aab87c0337403d4a97e785f8573d106, type: 3}
   m_Name: Cherry
   m_EditorClassIdentifier: 
-  scoreValue: 5
+  scoreValue: 35
   collectAnimation: {fileID: 3589312750243090165, guid: b69aa4cc8e2a44741852a8c9fc74f647, type: 3}

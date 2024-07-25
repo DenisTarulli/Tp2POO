@@ -17,5 +17,4 @@ public class Mushroom : Enemy
     {
         throw new System.NotImplementedException();
     }
-    
 }

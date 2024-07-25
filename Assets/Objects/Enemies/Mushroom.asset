@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   moveSpeed: 0.4
-  attackDamage: 8
-  maxHealth: 20
+  scoreOnKill: 60

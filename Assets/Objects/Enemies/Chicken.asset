@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Chicken
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  attackDamage: 30
-  maxHealth: 30
+  scoreOnKill: 120

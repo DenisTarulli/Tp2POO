@@ -19,6 +19,6 @@ public class ScoreUI : MonoBehaviour
 
     private void OnDisable()
     {
-        Collectibles.OnItemCollected -= AddScore;        
+        Collectibles.OnItemCollected -= AddScore;
     }
 }

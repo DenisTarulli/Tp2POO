@@ -1,3 +1,5 @@
+Gameplay demostrativo: https://youtu.be/KogqXPXZtss
+
 Actualizaciones en entrega para TP N° 4:
 - Interfaces (ITakeDamage y ICollectItem)
 - Events (OnHurt de player, OnPowerUpCollected y OnItemCollected)
